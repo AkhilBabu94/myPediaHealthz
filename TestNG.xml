@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" thread-count="3" name="All Test Suite">
+    <listeners>
+        <listener class-name="Utils.TestListener" />
+    </listeners>
+    <test parallel="classes" verbose="2" preserve-order="true" name="C:/Users/akhbabu/IdeaProjects/1KosmosUIAPI">
+        <classes>
+            <class name="MyRunner.TestRunner">
+            </class>
+        </classes>
+    </test>
+</suite>

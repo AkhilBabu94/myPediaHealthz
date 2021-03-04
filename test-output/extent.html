@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>ExtentReports</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Mar 4, 2021 11:36:31 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='50%'><span class='strong'>2</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='50%'>2</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Automation UI/API</span>
+						<span class='test-time'>Mar 4, 2021 11:36:31 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 4, 2021 11:36:31 PM</span>
+	<span class='label end-time'>Mar 4, 2021 11:37:09 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 37s+652ms</span>
+</div>
+	<div class='test-desc'>API and UI automation </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>11:36:34 PM</td>
+					<td class='step-details'>The status code is 200</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>11:36:35 PM</td>
+					<td class='step-details'>The EULA for the tenant 1kosmos is VkVSU0lPTiAxLjAuIElNUE9SVEFOVCBQTEVBU0UgUkVBRCBUaGlzIDFLb3Ntb3MgRW5kLVVzZXIgQWdyZWVtZW50ICh0aGUgIkFncmVlbWVudCIpIGlzIGEgYmluZGluZywgY29udHJhY3R1YWwgYWdyZWVtZW50IGJldHdlZW4gdGhlIEVuZC1Vc2VyICgieW91IikgYW5kIDFLb3Ntb3MgSW5jLiAoIjFLb3Ntb3MiKS4gVGhpcyBBZ3JlZW1lbnQgY292ZXJzIHlvdXIgYXBwbGljYXRpb24gZm9yIGEgZGlnaXRhbCBpZGVudGl0eSwgaW4gdGhlIGZvcm0gb2YgYSBkaWdpdGFsIGNyZWRlbnRpYWwgKCJDcmVkZW50aWFsIiksIHRoZSBpc3N1YW5jZSBvZiB0aGF0IENyZWRlbnRpYWwgYnkgMUtvc21vcywgYW5kIHRoZSB1c2Ugb2YgdGhhdCBDcmVkZW50aWFsIGJ5IHlvdS4gQSBDcmVkZW50aWFsIGlzIGFuIGF0dGVzdGF0aW9uIG9mIGlkZW50aXR5LCBxdWFsaWZpY2F0aW9uLCBjb21wZXRlbmNlLCBvciBhdXRob3JpdHkgdGhhdCB3aWxsIGJlIGlzc3VlZCB0byB5b3UgYnkgMUtvc21vcy4gQSBDcmVkZW50aWFsIHdpbGwgb25seSBiZSBpc3N1ZWQgdG8geW91IG9uY2UgeW91ciBpZGVudGl0eSBoYXMgYmVlbiBjb25maXJtZWQuIFRoZSBDcmVkZW50aWFsIGFsbG93cyBTZXJ2aWNlIFByb3ZpZGVyIHRvIGVzdGFibGlzaCB5b3VyIGlkZW50aXR5IHdoZW4geW91IHRyeSB0byBhY2Nlc3MgaXRzIHdlYnNpdGVzIGFuZCBhcHBsaWNhdGlvbnMgdXNpbmcgdGhpcyBDcmVkZW50aWFsLiBBIFNlcnZpY2UgUHJvdmlkZXIgaXMgYW4gb3JnYW5pemF0aW9uIHRoYXQgdXNlcyB5b3VyIENyZWRlbnRpYWwgdG8gdmVyaWZ5IHlvdXIgaWRlbnRpdHkgYW5kIHRvIGF1dGhlbnRpY2F0ZSB5b3UgdG8gaXRzIHdlYnNpdGVzIG9yIGFwcGxpY2F0aW9ucy4gT25seSB0aG9zZSBTZXJ2aWNlIFByb3ZpZGVycyB3aXRoIGFuIGVzdGFibGlzaGVkIGNvbnRyYWN0dWFsIGFncmVlbWVudCB3aXRoIDFLb3Ntb3MgYXJlIGFibGUgdG8gcmVseSB1cG9uIGEgQ3JlZGVudGlhbC4gQnkgZW50ZXJpbmcgdGhpcyBBZ3JlZW1lbnQsIHlvdSBhdXRob3JpemUgMUtvc21vcyB0byBwcm92aWRlIGlkZW50aXR5IGFzc2VydGlvbnMgdG8gU2VydmljZSBQcm92aWRlcnMgdGhhdCBoYXZlIGNvbnRyYWN0ZWQgd2l0aCAxS29zbW9zIHRvIHByb3ZpZGUgYXV0aGVudGljYXRpb24gc2VydmljZXMuIFRoZXNlIGlkZW50aXR5IGFzc2VydGlvbnMgc2hhbGwgb25seSBiZSBwcm92aWRlZCB0byB0aGUgU2VydmljZSBQcm92aWRlciBpZiB5b3UgYXR0ZW1wdCB0byBhY2Nlc3MgaXRzIGFwcGxpY2F0aW9uKHMpIG9yIHdlYnNpdGUocykgdXNpbmcgeW91ciBDcmVkZW50aWFsLiBBbiBpZGVudGl0eSBhc3NlcnRpb24gaXMgYSBzdGF0ZW1lbnQgYXNzZXJ0aW5nIHlvdXIgaWRlbnRpdHkgdG8gdGhlIFNlcnZpY2UgUHJvdmlkZXIgb3JnYW5pemF0aW9uLiBZb3UgYWdyZWUgdGhhdCB5b3UgaGF2ZSByZWFkLCB1bmRlcnN0b29kIGFuZCBhZ3JlZSB0byB0aGUgYWxsIG9mIHRoZSBmb2xsb3dpbmc6IDEuIFlvdSB3aWxsIHRha2UgYWxsIHJlYXNvbmFibGUgbWVhc3VyZXMgdG8gcHJvdGVjdCB0aGUgQ3JlZGVudGlhbCBhbmQgaXRzIGFzc29jaWF0ZWQgdXNlciBuYW1lLCBwYXNzd29yZCwgYW5kIGFjdGl2YXRpb24gZGF0YSAoZS5nLiwgUElOKSwgYW5kIGltbWVkaWF0ZWx5IHJlcG9ydCB0aGUgbG9zcywgY29tcHJvbWlzZSBvciBkZXN0cnVjdGlvbiBvZiB0aGUgQ3JlZGVudGlhbCwgdXNlciBuYW1lLCBwYXNzd29yZCBvciBhY3RpdmF0aW9uIGRhdGEuIDIuIFlvdSB3aWxsIHZlcmlmeSB5b3VyIGluZm9ybWF0aW9uIGNvbnRhaW5lZCBpbiB0aGUgQ3JlZGVudGlhbCBiZWZvcmUgdXNpbmcgaXQgYW5kIHByb21wdGx5IG5vdGlmeSAxS29zbW9zIG9mIGFueSBlcnJvcnMuIDMuIFlvdSB3aWxsIG5laXRoZXIgY29weSB5b3VyIENyZWRlbnRpYWwgbm9yIGFsbG93IGl0IHRvIGJlIHVzZWQgYnkgYW5vdGhlciBwZXJzb24uIDQuIFlvdSB3aWxsIGltbWVkaWF0ZWx5IHJlcXVlc3QgcmV2b2NhdGlvbiBvZiB5b3VyIENyZWRlbnRpYWwgaWY6IChpKSBhbnkgZGF0YSB1c2VkIHRvIGFjY2VzcyB5b3VyIENyZWRlbnRpYWwgb3IgdGhlIHRva2VuIGNvbnRhaW5pbmcgeW91ciBDcmVkZW50aWFsIGFyZSBpbnNlY3VyZSBpbiBhbnkgd2F5OyBvciAoaWkpIGFueSBvZiB0aGUgaW5mb3JtYXRpb24gY29udGFpbmVkIGluIHRoZSBDcmVkZW50aWFsLCBvciB5b3VyIGlkZW50aWZpY2F0aW9uIGFuZCBhdXRoZW50aWNhdGlvbiBpbmZvcm1hdGlvbiBoYXMgYmVlbiBjaGFuZ2VkLiA1LiBZb3Ugd2lsbCB1c2UgdGhlIENyZWRlbnRpYWwgYW5kIGFueSByZWxhdGVkIHNlcnZpY2Ugb25seSBpbiBhY2NvcmRhbmNlIHdpdGggdGhpcyBBZ3JlZW1lbnQsIGFwcGxpY2FibGUgcHJpdmFjeSB0ZXJtcywgbGF3cyBhbmQgcmVndWxhdGlvbnMuIDYuIFlvdSB3aWxsIHBlcmlvZGljYWxseSByZXZpZXcgeW91ciBvYmxpZ2F0aW9ucyB1bmRlciB0aGlzIEFncmVlbWVudCBhbmQgYXJlLCBpbiBhbnkgY2FzZSwgcmVzcG9uc2libGUgdGhlcmVmb3IuIDcuIFlvdSB3aWxsIG5vdCBjaGFsbGVuZ2UgdGhlIGxlZ2FsIGVmZmVjdCwgdmFsaWRpdHksIG9yIGVuZm9yY2VhYmlsaXR5IG9mIHRoZSBDcmVkZW50aWFsIG9yIGFueSBlbGVjdHJvbmljIGlkZW50aXR5IGFzc2VydGlvbnMgb3IgZWxlY3Ryb25pYyBzaWduYXR1cmVzIG1hZGUgdG8gU2VydmljZSBQcm92aWRlcnMgYnkgMUtvc21vcyBvbiB5b3VyIGJlaGFsZi4gOC4gQSBTZXJ2aWNlIFByb3ZpZGVyIG1heSBlbmZvcmNlIHRoZSB0ZXJtcyBhbmQgY29uZGl0aW9ucyBvZiB0aGlzIEFncmVlbWVudCBhZ2FpbnN0IHlvdSBhcyBhbiBleHByZXNzIHRoaXJkLXBhcnR5IGJlbmVmaWNpYXJ5LiA5LiAxS29zbW9zIG1heSByZXZva2UgKGVpdGhlciB0ZW1wb3JhcmlseSBvciBwZXJtYW5lbnRseSksIHdpdGhvdXQgcHJpb3Igbm90aWNlIHRvIHlvdSwgdGhlIENyZWRlbnRpYWwgYXMgZGlyZWN0ZWQgYnkgdGhlIFNlcnZpY2UgUHJvdmlkZXIgaWYgMUtvc21vcyByZWFzb25hYmx5IGJlbGlldmVzIHRoYXQgeW91IGFyZSB1c2luZyB0aGUgQ3JlZGVudGlhbCBpbiB2aW9sYXRpb24gb2YgdGhpcyBBZ3JlZW1lbnQgb3IgYXBwbGljYWJsZSBsYXcgb3IgcmVndWxhdGlvbi4gVXBvbiByZXZvY2F0aW9uIG9mIHlvdXIgQ3JlZGVudGlhbCwgeW91IHNoYWxsIG5vIGxvbmdlciB1c2UgdGhlIENyZWRlbnRpYWwgZm9yIGFueSBwdXJwb3NlLiAxMC4gPyA/IElmIDFLb3Ntb3MgaXMgaW5mb3JtZWQgdGhhdCB5b3VyIENyZWRlbnRpYWwgaXMgYmFzZWQgdXBvbiBlcnJvbmVvdXMgaW5mb3JtYXRpb24gKHdoZXRoZXIgb3Igbm90IHByb3ZpZGVkIGJ5IHlvdSBpbiB5b3VyIENyZWRlbnRpYWwgQXBwbGljYXRpb24pLCAxS29zbW9zIG1heSByZXZva2UgeW91ciBDcmVkZW50aWFsIHdpdGhvdXQgcHJpb3Igbm90aWNlIHRvIHlvdSBhbmQgaXNzdWUgYSBjb3JyZWN0ZWQgQ3JlZGVudGlhbCBiYXNlZCB1cG9uIHRoZSBjb3JyZWN0IGluZm9ybWF0aW9uLiAxMS4gQW55IGRldmljZSB3aXRoIHdoaWNoIHlvdSB3aWxsIGludGVyYWN0IHRvIHVzZSB5b3VyIENyZWRlbnRpYWwgaGFzIGFwcHJvcHJpYXRlIHNlY3VyaXR5IGNvbnRyb2xzIGluc3RhbGxlZCBhbmQgYWN0aXZhdGVkLCBhbmQgdGhhdCB0aGUgbGF0ZXN0IHVwZGF0ZXMgYXJlIGFwcGxpZWQuIFlvdSB3YXJyYW50IHRvIDFLb3Ntb3MgYW5kIGFueW9uZSB3aG8gcmVsaWVzIG9uIHlvdXIgQ3JlZGVudGlhbCB0aGF0OiAxLiBBbGwgaW5mb3JtYXRpb24geW91IHByb3ZpZGUgdG8gMUtvc21vcyBmb3IgdXNlIHRvIHZlcmlmeSB5b3VyIGlkZW50aXR5IGlzIGFjY3VyYXRlLiAyLiBObyBpbmZvcm1hdGlvbiB5b3UgcHJvdmlkZSB0byAxS29zbW9zIChpbmNsdWRpbmcgeW91ciBlLW1haWwgYWRkcmVzcykgaW5mcmluZ2VzIGFueSBjb3B5cmlnaHQgb3IgdGhlIGludGVsbGVjdHVhbCBwcm9wZXJ0eSByaWdodHMgb2YgYW55IHRoaXJkIHBhcnRpZXMuIDMuIFRoZSBpbmZvcm1hdGlvbiB5b3UgcHJvdmlkZSBoYXMgbm90IGJlZW4gYW5kIHdpbGwgbm90IGJlIHVzZWQgZm9yIGFueSB1bmxhd2Z1bCBwdXJwb3NlLiA0LiBZb3UgaGF2ZSBiZWVuIGFuZCB3aWxsIHJlbWFpbiB0aGUgb25seSBwZXJzb24gKGkpIGFibGUgdG8gYWNjZXNzIHlvdXIgQ3JlZGVudGlhbCBvciAoaWkpIHBvc3Nlc3NpbmcgYW55IGFjY2VzcyBpbmZvcm1hdGlvbiBvciBoYXJkd2FyZSBtZWNoYW5pc20gdXNlZCBmb3IgdGhlIENyZWRlbnRpYWwuIDUuIFlvdSB3aWxsIHVzZSB5b3VyIENyZWRlbnRpYWwgZXhjbHVzaXZlbHkgZm9yIGF1dGhvcml6ZWQgYW5kIGxlZ2FsIHB1cnBvc2VzIGNvbnNpc3RlbnQgd2l0aCB0aGlzIEFncmVlbWVudC4gWW91IGFncmVlIHRoYXQgMUtvc21vcyBtYXkgY29sbGVjdCBhbmQgdXNlIHRlY2huaWNhbCBkYXRhIGFuZCByZWxhdGVkIGluZm9ybWF0aW9uLCBpbmNsdWRpbmcgYnV0IG5vdCBsaW1pdGVkIHRvIHRlY2huaWNhbCBpbmZvcm1hdGlvbiBhYm91dCB5b3VyIGRldmljZSwgc3lzdGVtLCBhbmQgcGVyaXBoZXJhbHMsIHRoYXQgaXMgZ2F0aGVyZWQgcGVyaW9kaWNhbGx5IHRvIGZhY2lsaXRhdGUgdGhlIHByb3Zpc2lvbiBvZiBzb2Z0d2FyZSB1cGRhdGVzLCBwcm9kdWN0IHN1cHBvcnQgYW5kIG90aGVyIHNlcnZpY2VzIHRvIHlvdSAoaWYgYW55KSByZWxhdGVkIHRvIHRoaXMgQ3JlZGVudGlhbC4gSW4gb3JkZXIgdG8gYmUgaXNzdWVkIGEgQ3JlZGVudGlhbCwgYXMgcGFydCBvZiBhIHJlZ2lzdHJhdGlvbiBwcm9jZXNzIGNyZWF0ZWQgYnkgMUtvc21vcywgeW91IHdpbGwgYmUgcmVxdWVzdGVkIHRvIHN1Ym1pdCBpbmZvcm1hdGlvbiB0aGF0IGluZGl2aWR1YWxseSBpZGVudGlmaWVzIHlvdSAoUGVyc29uYWxseSBJZGVudGlmaWFibGUgSW5mb3JtYXRpb24gb3IgIlBJSSIgKS4gSW4gc2Vla2luZyBhIENyZWRlbnRpYWwgYW5kIHVzaW5nIHN1Y2ggQ3JlZGVudGlhbCBhZnRlciBpc3N1YW5jZSwgeW91IGNvbnNlbnQgdG8gMUtvc21vcyB1c2UsIHN0b3JhZ2UsIGFuZCBzaGFyaW5nIG9mIHN1Y2ggaW5mb3JtYXRpb24gYXMgbmVlZGVkIGFuZCB0byBtb25pdG9yIHlvdXIgdXNlIG9mIHRoZSBpbnRlcm5ldCBhcyBpdCBwZXJ0YWlucyB0byB0aGUgaXNzdWFuY2UgYW5kIHVzZSBvZiB5b3VyIENyZWRlbnRpYWwgdW5kZXIgdGhpcyBhZ3JlZW1lbnQuIFdoZW4geW91IGNvbXBsZXRlIHRoZSBtb2JpbGUgYXBwIGVucm9sbG1lbnQgdG8gb2J0YWluIGEgQ3JlZGVudGlhbCwgMUtvc21vcyB3aWxsIGNvbGxlY3QgUElJIGFuZCBvdGhlciBpbmZvcm1hdGlvbiBkaXJlY3RseSBvciBpbmRpcmVjdGx5IGZyb20geW91IHRoYXQgaXQgd2lsbCB1c2UgdG8gY29uZmlybSB5b3VyIGlkZW50aXR5IGJlZm9yZSAxS29zbW9zIGlzc3VlcyBhIENyZWRlbnRpYWwuIFRoZSBpbmZvcm1hdGlvbiAxS29zbW9zIElEIE1vYmlsZSBhcHBsaWNhdGlvbiBjb2xsZWN0cyB3aWxsIGluY2x1ZGUsIGJ1dCBtYXkgbm90IGJlIGxpbWl0ZWQgdG8sIHlvdXIgbmFtZSwgZW1haWwgYWRkcmVzcywgaG9tZSBhZGRyZXNzLCBwaG9uZSBudW1iZXIsIG1vYmlsZSBwaG9uZSwgZmF4IG51bWJlciwgVXNlciBJRCwgRHJpdmVycyBMaWNlbnNlLCBQYXNzcG9ydCBhbmQgcHJvZmVzc2lvbmFsIGxpY2Vuc2VzIChpZiBhcHBsaWNhYmxlKSBhcmUgY29udHJvbGxlZCBieSB5b3UgYXMgYSB1c2VyIG9mIHRoZSAxS29zbW9zIElEIG1vYmlsZSBhcHAuIElmIHlvdSByZXNpZGUgd2l0aGluIEV1cm9wZSwgd2hlbiB5b3UgcHJvdmlkZSBQSUkgdG8gMUtvc21vcyBzdWNoIFBJSSB3aWxsIGJlIHByb2Nlc3NlZCBpbiBhY2NvcmRhbmNlIHdpdGggdGhlIHByb3Zpc2lvbnMgb2YgdGhlIEVVIERhdGEgUHJvdGVjdGlvbiBEaXJlY3RpdmUgOTUvNDYgYW5kIGFwcGxpY2FibGUgbGF3KHMpLiBSZWdhcmRsZXNzIG9mIHlvdXIgY291bnRyeSBvZiByZXNpZGVuY2UsIGJ5IG9idGFpbmluZyBhbmQgdXNpbmcgYSBDcmVkZW50aWFsIHlvdSB1bmRlcnN0YW5kIGFuZCBhZ3JlZSB0aGF0IFBJSSBtYXkgaGF2ZSBiZWVuIGFsc28gcHJvdmlkZWQgYnkgeW91ciBlbXBsb3llciB0byAxS29zbW9zIHRvIGNvbmZpcm0geW91ciBpZGVudGl0eS4geW91IGFncmVlIHRoYXQgUElJIG1heSBiZSB0cmFuc2ZlcnJlZCBvdXRzaWRlIHRoZSBFdXJvcGVhbiBlY29ub21pYyBhcmVhIG9yIHlvdXIgY291bnRyeSBvZiByZXNpZGVuY2UsIGluY2x1ZGluZyB0cmFuc2ZlcnJpbmcgUElJIHRvIGNvdW50cmllcyB0aGF0IG1heSBub3QgcHJvdmlkZSBhZGVxdWF0ZSBwcm90ZWN0aW9ucyBmb3IgUElJLiAxS29zbW9zIG1heSBzaGFyZSB5b3VyIFBJSSBhbmQgb3RoZXIgY29sbGVjdGVkIGluZm9ybWF0aW9uIHdpdGggdGhpcmQgcGFydGllcyBhcyBtYXkgYmUgbmVjZXNzYXJ5IHRvIGNvbmZpcm0geW91ciBpZGVudGl0eSBvciB0byBwZXJmb3JtIGF1dGhlbnRpY2F0aW9uIHNlcnZpY2VzLiAxS29zbW9zIG1heSBhbHNvIG9idGFpbiBhbmQgdXNlIFBJSSBwcm92aWRlZCBieSBhbiBvcmdhbml6YXRpb24gdGhhdCBoYXMgY29udHJhY3RlZCB3aXRoIDFLb3Ntb3MgdG8gcHJvdmlkZSBDcmVkZW50aWFscyB0byBpdHMgZW1wbG95ZWVzIGFuZCBjb250cmFjdG9ycy4gMUtvc21vcyBtYXkgYWxzbyB0cmFuc2ZlciB5b3VyIFBJSSBhbmQgb3RoZXIgY29sbGVjdGVkIGluZm9ybWF0aW9uIHRvIHRoaXJkIHBhcnRpZXMsIGluY2x1ZGluZyBidXQgbm90IGxpbWl0ZWQgdG8gdGhlIHNlcnZpY2UgUHJvdmlkZXJzIGZvciB0aGUgc29sZSBwdXJwb3NlIG9mIGlzc3VpbmcgQ3JlZGVudGlhbHMgYW5kIHByb3ZpZGluZyBpZGVudGl0eSBhc3NlcnRpb25zLiBQSUkgd2lsbCBiZSB1c2VkIHNvbGVseSBmb3IgaXNzdWluZyBDcmVkZW50aWFscyBhbmQgcHJvdmlkaW5nIGlkZW50aXR5IGFzc2VydGlvbnMsIGFuZCB3aWxsIGJlIGhlbGQgbm8gbG9uZ2VyIHRoYW4gaXMgbmVjZXNzYXJ5IGluIG9yZGVyIHRvIHByb3ZpZGUgeW91IHdpdGggc3VjaCB1c2UuIER1cmluZyB0aGUgaW5pdGlhbCBlbnJvbGxtZW50IHByb2Nlc3MgeW91IG1heSBjaG9vc2UgdG8gIm9wdC1vdXQiIG9mIHRoZSBzZXJ2aWNlIGJ5IG5vdCBjb25zZW50aW5nIHRvIHRoZSBjb2xsZWN0aW9uIG9mIHlvdXIgUElJLiBJZiB5b3UgZG8gc28sIHlvdSB3aWxsIG5vdCBiZSBhYmxlIHRvIG9idGFpbiBhIENyZWRlbnRpYWwgYXQgYSBoaWdoZXIgQXNzdXJhbmNlIGxldmVsIHRoYW4gSUFMIDEuIDFLb3Ntb3MgYW5kIFNlcnZpY2UgUHJvdmlkZXJzIHdpbGwgcHJvY2Vzcywgc2hhcmUgYW5kIHRyYW5zbWl0IHlvdXIgUElJIGFuZCBvdGhlciBwZXJzb25hbCBkYXRhIHRocm91Z2ggdGhlIEludGVybmV0LCB3b3JsZHdpZGUsIHRvIGF1dGhlbnRpY2F0ZSB5b3UgaW4gdGhlIGNvbnRleHQgb2YgZGlnaXRhbCBpZGVudGl0eSB0cmFuc2FjdGlvbnMgeW91IGNvbmR1Y3Qgd2l0aCBTZXJ2aWNlIFByb3ZpZGVycyBmb3IgcHVycG9zZXMgb2YgaWRlbnRpdHkgYXV0aGVudGljYXRpb24gYW5kIHdpdGggeW91ciBjb25zZW50LiBJZiB5b3UgbmVlZCB0byB1cGRhdGUgb3IgY29ycmVjdCB5b3VyIFBJSSAoZS5nLiBuYW1lIGNoYW5nZSBkdWUgdG8gbWFycmlhZ2UpIHRoYXQgd2FzIHVzZWQgdG8gb2J0YWluIGEgQ3JlZGVudGlhbCwgeW91IHdpbGwgbmVlZCB0byByZXZva2UgeW91ciBDcmVkZW50aWFsIGFuZCBvYnRhaW4gYSBuZXcgb25lLiB5b3UgbWF5IHVwZGF0ZSB5b3VyIFBJSSBieSBjb250YWN0aW5nIHlvdXIgbG9jYWwgaGVscCBkZXNrIHdobyB3aWxsIGZvcndhcmQgeW91ciByZXF1ZXN0IHRvIDFLb3Ntb3MuIFlvdSBhY2tub3dsZWRnZSB0aGF0IHRoZSBleHBvcnQsIGltcG9ydCwgYW5kIHVzZSBvZiBjZXJ0YWluIGhhcmR3YXJlLCBzb2Z0d2FyZSwgYW5kIHRlY2huaWNhbCBkYXRhIHByb3ZpZGVkIGhlcmV1bmRlciBpcyByZWd1bGF0ZWQgYnkgdGhlIFVuaXRlZCBTdGF0ZXMgYW5kIG90aGVyIGdvdmVybm1lbnRzIGFuZCBhZ3JlZSB0byBjb21wbHkgd2l0aCBhbGwgYXBwbGljYWJsZSBsYXdzIGFuZCByZWd1bGF0aW9ucywgaW5jbHVkaW5nIHRoZSBVLlMuIEV4cG9ydCBBZG1pbmlzdHJhdGlvbiBBY3QsIHRoZSByZWd1bGF0aW9ucyBwcm9tdWxnYXRlZCB0aGVyZXVuZGVyIGJ5IHRoZSBVLlMuIERlcGFydG1lbnQgb2YgQ29tbWVyY2UsIGFuZCBhbnkgb3RoZXIgYXBwbGljYWJsZSBsYXdzIG9yIHJlZ3VsYXRpb25zIChjb2xsZWN0aXZlbHksICJMYXdzIikuIFdpdGhvdXQgbGltaXRpbmcgdGhlIGdlbmVyYWxpdHkgb2YgdGhlIGZvcmVnb2luZyB5b3UgZnVydGhlciBhZ3JlZTogWW91IHNoYWxsIG5vdCBleHBvcnQsIHJlLWV4cG9ydCwgcmVsZWFzZSwgdHJhbnNmZXIgb3IgYWxsb3cgdGhlIGRpdmVyc2lvbiBvZiBhbnkgaXRlbXMsIGhhcmR3YXJlLCBzb2Z0d2FyZSwgdGVjaG5vbG9neSwgb3IgdGhlIGRpcmVjdCBwcm9kdWN0IG9mIHN1Y2ggdGVjaG5vbG9neSBvYnRhaW5lZCBieSB5b3UgdW5kZXIgdGhpcyBBZ3JlZW1lbnQgd2l0aG91dCBmaXJzdCBjb21wbHlpbmcgZnVsbHkgd2l0aCBhbGwgYXBwbGljYWJsZSBMYXdzLiBOZWl0aGVyIHlvdSBub3IgYW55IGVudGl0eSB3aXRoIHdob20geW91IGRvIGJ1c2luZXNzLCBpcyBzdWJqZWN0IHRvIHRyYWRlIHNhbmN0aW9ucywgZW1iYXJnb2VzLCBvciBvdGhlciByZXN0cmljdGlvbnMgdW5kZXIgYW55IExhd3MsIGFuZCBuZWl0aGVyIHlvdSBub3IgYW55IGVudGl0eSB3aXRoIHdob20geW91IGRvIGJ1c2luZXNzLCBpcyBpbnZvbHZlZCBpbiBhbiBlbmQgdXNlIHByb2hpYml0ZWQgdW5kZXIgYW55IGxhd3MgaW5jbHVkaW5nIGJ1dCBub3QgbGltaXRlZCB0byBjaGVtaWNhbCBvciBiaW9sb2dpY2FsIHdlYXBvbnMgcHJvbGlmZXJhdGlvbiBvciBudWNsZWFyIG9yIG1pc3NpbGUgdGVjaG5vbG9neSBwcm9saWZlcmF0aW9uLCBpbiBlaXRoZXIgY2FzZSB3aXRob3V0IGNvbXBseWluZyBmdWxseSB3aXRoIGFsbCBhcHBsaWNhYmxlIGxhd3MgYW5kIG9idGFpbmluZyBhbnkgYW5kIGFsbCByZXF1aXJlZCBsaWNlbnNlcy4gWW91IHNoYWxsIGNvb3BlcmF0ZSB3aXRoIGFuZCBwcm92aWRlIGFsbCBuZWNlc3NhcnkgaW5mb3JtYXRpb24gdG8gMUtvc21vcyBpbiBvcmRlciB0byBmYWNpbGl0YXRlIGZ1bGwgY29tcGxpYW5jZSB3aXRoIGFsbCBMYXdzLiBZb3UgYXJlIG5vdCBzdWJqZWN0IHRvIGFueSBVLlMuIGdvdmVybm1lbnQgb3Igb3RoZXIgcmVsZXZhbnQgZ292ZXJubWVudCBvcmRlciBzdXNwZW5kaW5nLCByZXZva2luZyBvciBkZW55aW5nIGV4cG9ydCBwcml2aWxlZ2VzLiBUbyB0aGUgbWF4aW11bSBleHRlbnQgcGVybWl0dGVkIGJ5IGFwcGxpY2FibGUgbGF3cywgeW91IGFncmVlIHRvIGluZGVtbmlmeSBhbmQgaG9sZCAxS29zbW9zIGhhcm1sZXNzIGZyb20gYW55IGRhbWFnZXMgdG8gMUtvc21vcyBmb3IgeW91ciBicmVhY2ggb2YgYW55IHRlcm1zIG9mIHRoZSBBZ3JlZW1lbnQgc2V0IGZvcnRoIGhlcmVpbi4gWW91ciByaWdodCB0byB1c2UgYSBDcmVkZW50aWFsIHVuZGVyIHRoaXMgQWdyZWVtZW50IHdpbGwgdGVybWluYXRlIGF1dG9tYXRpY2FsbHkgd2l0aG91dCBub3RpY2UgZnJvbSAxS29zbW9zIGlmIHlvdSBmYWlsIHRvIGNvbXBseSB3aXRoIGFueSB0ZXJtKHMpIG9mIHRoaXMgQWdyZWVtZW50LiBVcG9uIHN1Y2ggdGVybWluYXRpb24sIDFLb3Ntb3Mgd2lsbCByZXZva2UgeW91ciBDcmVkZW50aWFsIGFuZCB5b3UgbXVzdCBjZWFzZSBhbGwgdXNlIG9mIHRoZSBDcmVkZW50aWFsLiBZb3UgbWF5IG5vdCBhc3NpZ24gdGhpcyBBZ3JlZW1lbnQsIHlvdXIgQ3JlZGVudGlhbCwgb3IgdGhlIHVzZSBvZiB5b3VyIENyZWRlbnRpYWwgdG8gYW55IHBlcnNvbiBvciBlbnRpdHkuIFRvIHRoZSBtYXhpbXVtIGV4dGVudCBwZXJtaXR0ZWQgYnkgYXBwbGljYWJsZSBsYXdzOiBpKSB5b3UgYWdyZWUgdGhhdCAxS29zbW9zIHdpbGwgbm90IGJlIGxpYWJsZSBmb3IgYW55IGRhbWFnZXMgdG8geW91IGZvciBmYWlsdXJlIHRvIGlzc3VlIHlvdSBhIENyZWRlbnRpYWwgb3IgYnkgbm90IHBlcm1pdHRpbmcgeW91IHRvIGFjY2VzcyB0aGUgd2Vic2l0ZSBvciBhcHBsaWNhdGlvbiBvZiBhIFNlcnZpY2UgUHJvdmlkZXI7IGFuZCBpaSkgeW91IGZ1cnRoZXIgYWdyZWUgdGhhdCAxS29zbW9zIHNoYWxsIG5vdCBiZSBsaWFibGUgZm9yIGFueSBkYW1hZ2VzIHJlc3VsdGluZywgZGlyZWN0bHkgb3IgaW5kaXJlY3RseSwgZnJvbSBhbnkgYWN0IG9yIGZhaWx1cmUgdG8gYWN0IGJ5IDFLb3Ntb3Mgb3IgYW55IHRoaXJkIHBhcnR5IGFjdGluZyBvbiBpdHMgYmVoYWxmIGluY2x1ZGluZywgd2l0aG91dCBsaW1pdGF0aW9uLCB0aGUgbm9uLXBlcmZvcm1hbmNlLCBkZWZhdWx0cywgb21pc3Npb25zIG9yIG5lZ2xpZ2VuY2Ugb2YgYW55IHRoaXJkIHBhcnR5IHdpdGggcmVzcGVjdCB0byB0aGlzIEFncmVlbWVudC4gMUtvc21vcyBzaGFsbCBub3QgYmUgbGlhYmxlIHVuZGVyIHRoaXMgQWdyZWVtZW50IGR1ZSB0byBpdHMgaW5hYmlsaXR5IHRvIHBlcmZvcm0gaXRzIG9ibGlnYXRpb25zIGJ5IHJlYXNvbiBvZiBmaXJlLCBlYXJ0aHF1YWtlLCBmbG9vZCwgbGFib3IgZGlzcnVwdGlvbiBvciBhbnkgZmFpbHVyZSBvciBkZWxheSBvZiBhbnkgdHJhbnNwb3J0YXRpb24sIHBvd2VyLCBjb21wdXRlciBvciBjb21tdW5pY2F0aW9ucyBzeXN0ZW0gb3IgYW55IG90aGVyIG9yIHNpbWlsYXIgY2F1c2UgYmV5b25kIDFLb3Ntb3MgY29udHJvbC4gRXhjZXB0IGFzIGV4cHJlc3NseSBzZXQgZm9ydGggaGVyZWluLCBub3RoaW5nIGluIHRoaXMgQWdyZWVtZW50LCBleHByZXNzIG9yIGltcGxpZWQsIG1heSBiZSBjb25zdHJ1ZWQgdG8gY29uZmVyIGFueSByaWdodHMsIGxlZ2FsIG9yIGVxdWl0YWJsZSwgaW4gYW55IHBlcnNvbiBvciBlbnRpdHkgb3RoZXIgdGhhbiB0aGUgcGFydGllcyBoZXJldG8gYW5kIHRoZWlyIHJlc3BlY3RpdmUgc3VjY2Vzc29ycyBhbmQgcGVybWl0dGVkIGFzc2lnbnMuIElmIGFueSBwcm92aXNpb24gb2YgdGhpcyBBZ3JlZW1lbnQgaXMgaGVsZCBieSBhbnkgZW50aXR5IG9mIGNvbXBldGVudCBqdXJpc2RpY3Rpb24gdG8gYmUgdW5lbmZvcmNlYWJsZSwgdGhlIHJlbWFpbmRlciBvZiB0aGUgQWdyZWVtZW50IHJlbWFpbnMgZW5mb3JjZWFibGUuIEZhaWx1cmUgb3IgZGVsYXkgYnkgeW91IG9yIDFLb3Ntb3MgdG8gZXhlcmNpc2Ugb3IgZW5mb3JjZSwgb3IgYSBwYXJ0aWFsIGV4ZXJjaXNlIG9mLCBhbnkgcmlnaHQgdW5kZXIgdGhpcyBBZ3JlZW1lbnQgaXMgbm90IGEgd2FpdmVyIG9mIHRoYXQgcmlnaHQuIFRoaXMgQWdyZWVtZW50IHdpbGwgYmUgZ292ZXJuZWQgYnkgYW5kIGNvbnN0cnVlZCBpbiBhY2NvcmRhbmNlIHdpdGggdGhlIGRvbWVzdGljIGxhdyBvZiBOZXcgWW9yaywgd2l0aG91dCByZWdhcmQgdG8gaXRzIGNob2ljZSBvZiBsYXcgcHJpbmNpcGxlcy4gRm9yIGFueSBzdWNoIGRpc3B1dGUsIHRoZSBwYXJ0aWVzIHdhaXZlIGFueSBhbmQgYWxsIG9iamVjdGlvbnMgdG8gdmVudWUgaW4gTmV3IFlvcmssIFVuaXRlZCBTdGF0ZXMgRGlzdHJpY3QgQ291cnQgZm9yIHRoZSBEaXN0cmljdCBvZiBOZXcgWW9yayBhbmQgdGhlIGNvdXJ0cyBvZiB0aGUgU3RhdGUgb2YgTmV3IFlvcmsgaW4gTmV3IFlvcmssIE5ldyBZb3JrLiBUaGUgQWdyZWVtZW50IChhKSBleHByZXNzZXMgdGhlIGVudGlyZSB1bmRlcnN0YW5kaW5nIG9mIHRoZSBwYXJ0aWVzIHdpdGggcmVzcGVjdCB0byBpdHMgc3ViamVjdCBtYXR0ZXI7IChiKSBzdXBlcnNlZGVzIGFsbCBwcmlvciBvciBjb250ZW1wb3JhbmVvdXMgcmVwcmVzZW50YXRpb25zLCBzb2xpY2l0YXRpb25zLCBvZmZlcnMsIHVuZGVyc3RhbmRpbmdzIG9yIGFncmVlbWVudHMgcmVnYXJkaW5nIHRoZWlyIHN1YmplY3QgbWF0dGVyIHdoaWNoIGFyZSBub3QgZnVsbHkgZXhwcmVzc2VkIGhlcmVpbjsgYW5kIChjKSBjb250YWlucyBhbGwgdGhlIHRlcm1zLCBjb25kaXRpb25zLCB1bmRlcnN0YW5kaW5ncywgYW5kIHJlcHJlc2VudGF0aW9ucyBvZiB0aGUgcGFydGllcy4gWW91IGF1dGhvcml6ZSAxS29zbW9zIHRvIHJlcXVlc3QgeW91ciBtb2JpbGUgY2FycmllciB0byB1c2UgeW91ciBtb2JpbGUgc3Vic2NyaWJlciBkZXRhaWxzIGZvciB2ZXJpZnlpbmcgeW91ciBpZGVudGl0eS4gVGhvc2UgZGV0YWlscyBtYXkgaW5jbHVkZSBuYW1lLCBiaWxsaW5nIGFkZHJlc3MsIGVtYWlsLCBhbmQgcGhvbmUgbnVtYmVyLiBUaGlzIGluZm9ybWF0aW9uIG1heSBhbHNvIGluY2x1ZGUgbG9jYXRpb24gaW5mb3JtYXRpb24sIGlmIGF2YWlsYWJsZS4=</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:36:47 PM</td>
+					<td class='step-details'>There are atleast 3 languages available</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:37:09 PM</td>
+					<td class='step-details'>The create button is disabled</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>4</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Mar 4, 2021 11:36:31 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Mar 4, 2021 11:37:09 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 37s+742ms</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 1,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 2,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 2,
+				exceptionsChild: 0,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>
